@@ -80,7 +80,7 @@ $(document).ready(function() {
       }
 
       if (deg) {
-        var val = Math.floor((deg / 22.5) + 0.5),
+        let val = Math.floor((deg / 22.5) + 0.5),
           arr = [
             'N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE',
             'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW',
@@ -90,7 +90,7 @@ $(document).ready(function() {
         windDir = 'N';
       }
 
-      var fahrenheit = ['US', 'BS', 'BZ', 'KY', 'PL'];
+      let fahrenheit = ['US', 'BS', 'BZ', 'KY', 'PL'];
       if (fahrenheit.indexOf(countryCode) > -1) {
         $('.temp').text(temp + '° F');
       } else {
