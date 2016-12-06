@@ -32,46 +32,47 @@ $(document).ready(function() {
         countryShort = weatherData.sys.country,
         windDir,
         icon = weatherData.weather[0].icon;
+        console.log(icon);
 
-      switch(condition) {
-        case 'clear sky':
-          if(icon == '01d') {
-            $('.climacon_sun').removeClass('hidden');
-            break;
-          } else {
-            $('.climacon_moon').removeClass('hidden');
-            break;
-          }
-        case 'few clouds':
-          if(icon == '02d') {
-            $('.climacon_cloudSun').removeClass('hidden');
-            break;
-          } else {
-            $('.climacon_cloudMoon').removeClass('hidden');
-            break;
-          }
-        case 'scattered clouds':
-        case 'broken clouds':
+      switch(icon) {
+        case '01d':
+          $('.climacon_sun').removeClass('hidden');
+          break;
+        case '01n':
+          $('.climacon_moon').removeClass('hidden');
+          break;
+        case '02d':
+          $('.climacon_cloudSun').removeClass('hidden');
+          break;
+        case '02n':
+          $('.climacon_cloudMoon').removeClass('hidden');
+          break;
+        case '03d':
+        case '03n':
+        case '04d':
+        case '04n':
           $('.climacon_cloud').removeClass('hidden');
           break;
-        case 'shower rain':
+        case '09d':
+        case '09n':
           $('.climacon_cloudRain').removeClass('hidden');
           break;
-        case 'rain':
-          if(icon == '10d') {
-            $('.climacon_cloudDrizzleSun').removeClass('hidden');
-            break;
-          } else {
-            $('.climacon_cloudDrizzleMoon').removeClass('hidden');
-            break;
-          }
-        case 'thunderstorm':
+        case '10d':
+          $('.climacon_cloudDrizzleSun').removeClass('hidden');
+          break;
+        case '10n':
+          $('.climacon_cloudDrizzleMoon').removeClass('hidden');
+          break;
+        case '11d':
+        case '11n':
           $('.climacon_cloudLightning').removeClass('hidden');
           break;
-        case 'snow':
+        case '13d':
+        case '13n':
           $('.climacon_cloudSnowAlt').removeClass('hidden');
           break;
-        case 'mist':
+        case '50d':
+        case '50n':
           $('.climacon_cloudFogt').removeClass('hidden');
           break;
         default:
